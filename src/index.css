@@ -567,9 +567,9 @@ body {
   .vol-grid { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 680px) {
-  .main-content { padding: 1.5rem 1rem 4rem; }
+  .main-content { padding: 1.5rem 0 4rem; }
   .panel-grid.cols-3, .panel-grid.cols-2 { grid-template-columns: 1fr; }
-  .top-bar { padding: 0 1rem; }
+  .top-bar { padding: 0 0.5rem; }
   .step-item span.step-label { display: none; }
   .recipe-header { flex-direction: column; }
   .vol-grid { grid-template-columns: 1fr; }
@@ -580,4 +580,29 @@ body {
   .top-bar, .nav-row, .step-bar { display: none !important; }
   body { background: white; color: black; }
   .recipe-card { box-shadow: none; border: 1px solid #ccc; }
+}
+
+/* ── Tailwind Polyfills for Layout and Padding ── */
+.w-full { width: 100% !important; }
+.max-w-full { max-width: 100% !important; }
+.px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.px-2 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+.whitespace-nowrap { white-space: nowrap !important; }
+
+@media (min-width: 768px) {
+  .md\:container { max-width: 1320px !important; }
+  .md\:mx-auto { margin-left: auto !important; margin-right: auto !important; }
+  .md\:px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .md\:px-6 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .md\:px-8 { padding-left: 2rem !important; padding-right: 2rem !important; }
+  .md\:whitespace-normal { white-space: normal !important; }
+}
+
+/* Ensure mobile cards span edge-to-edge if the parent removes padding */
+@media (max-width: 680px) {
+  .sel-panel, .card-format-section, .recipe-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 }

@@ -95,7 +95,7 @@ function SelectionPanel({ label, title, description, options, value, onChange })
   return (
     <div className="sel-panel">
       <div className="panel-label"><span className="panel-label-dot" />{label}</div>
-      <div className="panel-title">{title}</div>
+      <div className="panel-title whitespace-nowrap md:whitespace-normal">{title}</div>
       <div className="panel-desc">{description}</div>
       <div className="option-list" role="radiogroup" aria-label={title}>
         {options.map(opt => (
@@ -373,7 +373,7 @@ export default function App() {
   if (result) return (
     <div className="app-shell">
       <TopBar />
-      <main className="main-content">
+      <main className="main-content w-full max-w-full md:container md:mx-auto px-0 md:px-4">
         <div className="section-header">
           <h1><span className="gradient-text">前導實驗執行策略</span></h1>
           <p>根據您選擇的 iBind Flex 實驗配置，由專家系統評估所有風險標記，請於執行前詳閱各項建議。</p>
@@ -398,7 +398,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <TopBar />
-      <main className="main-content">
+      <main className="main-content w-full max-w-full md:container md:mx-auto px-0 md:px-4">
         <div className="section-header">
           <h1><span className="gradient-text">iBind Flex</span> 前導實驗規劃系統</h1>
           <p>請依序設定以下實驗參數。專家系統將依據 iBind Flex 微流體動力學限制與生化干擾規則，對您的選擇進行評估，並產生客製化的前導實驗執行策略。</p>
@@ -469,7 +469,7 @@ export default function App() {
 
 function TopBar() {
   return (
-    <header className="top-bar" role="banner">
+    <header className="top-bar w-full px-0 md:px-8" role="banner">
       <div className="top-bar-brand">
         <div className="top-bar-logo" aria-hidden="true">iB</div>
         <div>
